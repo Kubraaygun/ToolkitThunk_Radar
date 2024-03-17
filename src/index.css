@@ -112,3 +112,15 @@ header p {
 .active{
   background: rgb(74, 46, 165);
 }
+
+
+.popup{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.popup span {
+  text-align: center;
+  margin: 5px 0 10px;
+}

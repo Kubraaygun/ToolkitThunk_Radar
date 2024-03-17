@@ -6,9 +6,18 @@ export const getFlights = createAsyncThunk("flight/getFlights", async() => {
 
 
   //1)api istegi at
-  const res = axios.request(options);
+  const res = await axios.request(options);
 
   //2)gelen veri formatla
 
-  //3)formatlanan veriyi slice aktar
+   const refinedData=res.data.aircraft.map((i)=>({
+    id:i[0],
+    code: i[1],
+    lat:i[2],
+    lng:i[3],
+   }))
+  //3)formatlanan veriyi payload olarak belirle 
+  return refinedData;
+
+
 });
