@@ -1,6 +1,10 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+
 
 const Header = () => {
+  const state=useSelector((store)=>store);
+  
   return (
     <header>
         <div>
@@ -8,7 +12,12 @@ const Header = () => {
             <h3>Ucus Radari</h3>
         </div>
 
-        <p>345 Ucus Bulundu</p>
+        <p> {
+          state.isLoading ? "Uçuşlar Hesaplanıyor..." :
+          state.isError ? "Bir Hata Oluştu :(" :
+          state.flights.length + " Uçuş Bulundu"
+          
+          }  </p>
     </header>
   )
 }
