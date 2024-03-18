@@ -6,6 +6,8 @@ import { icon } from "leaflet";
 const MapView = () => {
   const state = useSelector((store) => store.flight);
 
+  const flights = state && state.flights;
+
   //ikon
 
   const planeIcon = icon({
@@ -23,16 +25,18 @@ const MapView = () => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
 
-      {state.flights.map((flight) => (
-        <Marker icon={planeIcon} position={[flight.lat, flight.lng]}>
-          <Popup>
-            <div className="popup">
-              <span>Kod:{flight.code}</span>
-              <button>Detay</button>
-            </div>
-          </Popup>
-        </Marker>
-      ))}
+      {flights &&
+        Array.isArray(flights) &&
+        flights.map((flight) => (
+          <Marker icon={planeIcon} position={[flight.lat, flight.lng]}>
+            <Popup>
+              <div className="popup">
+                <span>Kod:{flight.code}</span>
+                <button>Detay</button>
+              </div>
+            </Popup>
+          </Marker>
+        ))}
     </MapContainer>
   );
 };
