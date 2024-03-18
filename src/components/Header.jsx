@@ -2,7 +2,9 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const state = useSelector((store) => store.flight);
-
+  const isLoading  = state && state.isLoading;
+  const isError = state && state.isError;
+  const flights = state && state.flights;
   return (
     <header>
       <div>
@@ -11,11 +13,11 @@ const Header = () => {
       </div>
 
       <p>
-        {state.isLoading
+        {isLoading
           ? "Uçuşlar Hesaplanıyor..."
-          : state.isError
+          : isError
           ? "Bir Hata Oluştu :("
-          : state.flights.length + " Uçuş Bulundu"}
+          : flights ? flights.length + " Uçuş Bulundu" : " Ucus Bulunamadi"}
       </p>
     </header>
   );
