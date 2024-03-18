@@ -1,18 +1,19 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { icon } from "leaflet";
 
 const MapView = () => {
   const state = useSelector((store) => store.flight);
+  const dispatch = useDispatch();
 
   const flights = state && state.flights;
 
   //ikon
 
   const planeIcon = icon({
-    iconUrl: "/plane-ico.png",
-    iconSize: [70, 60],
+    iconUrl: "/plane-i.png",
+    iconSize: [100,60],
   });
   return (
     <MapContainer

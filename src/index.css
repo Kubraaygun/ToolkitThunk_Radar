@@ -2,10 +2,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
-
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -68,14 +65,14 @@ button:focus-visible {
 
 /*Benim Stiller*/
 
-header{
+header {
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: space-between;
   padding: 20px 40px;
 }
 
-header div{
+header div {
   display: flex;
   align-items: center;
   font-size: 21px;
@@ -83,7 +80,7 @@ header div{
   cursor: pointer;
 }
 
-header img{
+header img {
   height: 50px;
 }
 
@@ -92,32 +89,30 @@ header p {
   font-weight: bold;
 }
 
-.view-buttons{
+.view-buttons {
   display: flex;
   justify-content: center;
 }
 
-.view-buttons button:first-child{
+.view-buttons button:first-child {
   border-radius: 6px 0 0 6px;
 }
-.view-buttons button:last-child{
+.view-buttons button:last-child {
   border-radius: 0 6px 6px 0;
 }
 
-.leaflet-container{
-  height: 80vh ;
-  margin-top: 30px ;
+.leaflet-container {
+  height: 80vh;
+  margin-top: 30px;
 }
 
-.active{
+.active {
   background: rgb(74, 46, 165);
 }
 
-
-.popup{
+.popup {
   display: flex;
   flex-direction: column;
-
 }
 
 .popup span {
