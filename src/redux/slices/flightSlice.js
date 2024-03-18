@@ -3,7 +3,7 @@ import { getFlights } from "../actions/flightAction";
 
 const initialState = {
   isLoading: false,
-  isEror: false,
+  isError: false,
   flights: [],
 };
 
@@ -17,12 +17,12 @@ const flightSlice = createSlice({
 
     builder.addCase(getFlights.rejected, (state) => {
       state.isLoading = false;
-      state.isEror = true;
+      state.isError = true;
     });
 
     builder.addCase(getFlights.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.isEror = false;
+      state.isError = false;
       state.flights = action.payload;
     });
   },
