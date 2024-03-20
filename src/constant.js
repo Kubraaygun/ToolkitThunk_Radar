@@ -1,17 +1,9 @@
-export const options = {
+
+ export const options = {
   method: 'GET',
-  url: 'https://flight-radar1.p.rapidapi.com/flights/list-in-boundary',
-  params: {
-    bl_lat:'34.503215?',
-    bl_lng:'25.324261?',
-    tr_lat: '42.869652?',
-    tr_lng: '44.552871?',
-    limit: '300',
-  },
+  url: 'https://flight-radar1.p.rapidapi.com/aircrafts/list',
   headers: {
-    'X-RapidAPI-Key': 'b3cfd04374msh4eb45ee4f1d0c8dp1ead6fjsnfe67f330b395',
-    'X-RapidAPI-Host': 'flight-radar1.p.rapidapi.com?'
+    'X-RapidAPI-Key': '0ae73afa42msh492c768e6f710ddp1f96e6jsnc03826257744',
+    'X-RapidAPI-Host': 'flight-radar1.p.rapidapi.com'
   }
 };
-
-	
