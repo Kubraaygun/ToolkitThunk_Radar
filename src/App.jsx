@@ -36,14 +36,14 @@ function App() {
           className={isMapView ? "active" : ""}
           onClick={() => setIsMapView(true)}
         >
-          Harita Gorunumu
+          Harita Görünümü
         </button>
 
         <button
           className={!isMapView ? "active" : ""}
           onClick={() => setIsMapView(false)}
         >
-          Liste Gorunumu
+          Liste Görünümü
         </button>
       </div>
 

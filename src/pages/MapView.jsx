@@ -29,8 +29,8 @@ const MapView = ({openModal}) => {
         <Marker icon={planeIcon} position={[flight.lat, flight.lng]}>
           <Popup>
             <div className="popup">
-              <span>kod: {flight.code}</span>
-              <button onClick={()=>openModal(flight.id)}>detay</button>
+              <span>Kod: {flight.code}</span>
+              <button onClick={()=>openModal(flight.id)}>Detay</button>
             </div>
           </Popup>
         </Marker>

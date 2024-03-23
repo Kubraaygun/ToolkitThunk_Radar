@@ -6,15 +6,15 @@ const Header = () => {
     <header>
       <div>
         <img src="/plane-l.png" />
-        <h3>Ucus Radari</h3>
+        <h3>Uçuş Radarı</h3>
       </div>
 
       <p>
         {state.isLoading
-          ? "Ucuslar hesaplaniyor..."
+          ? "Uçuşlar Hesaplanıyor..."
           : state.isError
-          ? "Uzgunuz bir sorun olustu"
-          : state.flights.length + "ucus bulundu"}
+          ? "Üzgünüz Bir Sorun Oluştu"
+          : state.flights.length +  "Uçuş Bulundu"}
       </p>
     </header>
   );

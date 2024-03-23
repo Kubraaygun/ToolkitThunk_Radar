@@ -5,4 +5,4 @@ Kutuphaneler
 - axios
 - bootstrap
 - leaflet
-- react-leaflet# ToolkitThunk_Radar
+- react-leaflet

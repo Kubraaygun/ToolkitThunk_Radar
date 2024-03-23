@@ -13,3 +13,10 @@ export const options = {
     "X-RapidAPI-Host": "flight-radar1.p.rapidapi.com",
   },
 };
+
+
+export const options2= {
+  headers: {
+    "X-RapidAPI-Key": "***REMOVED***",
+    "X-RapidAPI-Host": "flight-radar1.p.rapidapi.com",
+}}
