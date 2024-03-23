@@ -13,3 +13,10 @@ export const options = {
     "X-RapidAPI-Host": "flight-radar1.p.rapidapi.com",
   },
 };
+
+
+export const options2= {
+  headers: {
+    "X-RapidAPI-Key": "d40819b62dmshbf098c90268757cp1abe88jsnb9dde87956c3",
+    "X-RapidAPI-Host": "flight-radar1.p.rapidapi.com",
+}}
