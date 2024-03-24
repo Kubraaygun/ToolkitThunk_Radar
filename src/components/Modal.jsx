@@ -5,6 +5,9 @@ import { options2 } from "../constant";
 const Modal = ({ detailId, closeModal }) => {
   const [d, setData] = useState(null);
   useEffect(() => {
+    //Her calistiginda onceki ucusun verilerini temizliyoruz.
+    //Bu sayede yukleniyor tetiklenecek
+    setData(null);
     axios
       .get(
         `https://flight-radar1.p.rapidapi.com/flights/detail?flight=${detailId}`,
@@ -13,7 +16,7 @@ const Modal = ({ detailId, closeModal }) => {
       .then((res) => {
         setData(res.data);
       });
-  }, []);
+  }, [detailId]);
 
   return (
     <div className="detail-outer">
@@ -23,7 +26,11 @@ const Modal = ({ detailId, closeModal }) => {
         </p>
 
         {!d ? (
-          <p>Yükleniyor.. </p>
+          <div className="wrapper">
+            <div class="loader">
+              <span></span>
+            </div>
+          </div>
         ) : (
           <>
             <h2>{d.aircraft.model.text}</h2>
