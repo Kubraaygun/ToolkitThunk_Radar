@@ -1,10 +1,12 @@
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, Polyline } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { icon } from "leaflet";
+import { clear } from "../redux/slices/flightSlice";
 
 const MapView = ({openModal}) => {
   const state = useSelector((store) => store);
+ const dispatch=useDispatch();
 
   //icon olusturma
 
@@ -13,7 +15,13 @@ const MapView = ({openModal}) => {
     iconSize: [30,30],
   });
 
-  console.log(state.flights);
+  const polyline = [
+    [51.505, -0.09],
+    [51.51, -0.1],
+    [51.51, -0.12],
+  ]
+
+  //console.log(state.flights);
   return (
     <MapContainer
       center={[39.149702, 35.420686]}
@@ -31,10 +39,16 @@ const MapView = ({openModal}) => {
             <div className="popup">
               <span>Kod: {flight.code}</span>
               <button onClick={()=>openModal(flight.id)}>Detay</button>
+              {state.trail.length > 0 && ( 
+              <button onClick={()=> dispatch(clear())}>Rotayı Temizle</button>)}
+             
             </div>
           </Popup>
         </Marker>
       ))}
+
+
+      <Polyline  positions={state.trail}/>
     </MapContainer>
   );
 };

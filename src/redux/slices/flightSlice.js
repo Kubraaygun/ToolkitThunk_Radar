@@ -5,6 +5,7 @@ const initialState = {
   isLoading: false,
   isError: false,
   flights: [],
+  trail: []
 };
 
 const flightSlice = createSlice({
@@ -24,6 +25,18 @@ const flightSlice = createSlice({
       state.flights = action.payload;
     });
   },
+  reducers:{
+    setTrail:(state,action)=> 
+    {
+      const trail=action.payload.map((i)=>[i.lat,i.lng])
+    state.trail=trail},
+    clear:(state)=>{
+      state.trail=[]
+    }
+  },
+
 });
 
+
+export const {setTrail,clear}=flightSlice.actions;
 export default flightSlice.reducer;
