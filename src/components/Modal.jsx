@@ -1,9 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { options2 } from "../constant";
+import { useDispatch } from "react-redux";
+import { setTrail } from "../redux/slices/flightSlice";
 
 const Modal = ({ detailId, closeModal }) => {
   const [d, setData] = useState(null);
+  const dispatch =useDispatch()
+
+  
   useEffect(() => {
     //Her calistiginda onceki ucusun verilerini temizliyoruz.
     //Bu sayede yukleniyor tetiklenecek
@@ -14,6 +19,7 @@ const Modal = ({ detailId, closeModal }) => {
         options2
       )
       .then((res) => {
+        dispatch(setTrail(res.data.trail))
         setData(res.data);
       });
   }, [detailId]);
