@@ -180,6 +180,7 @@ header p {
 
 .detail-inner p span:last-child {
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 .detail-inner img {
@@ -269,7 +270,7 @@ header p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #535bf2;
+  background: green;
   transform-origin: top left;
   transform: rotate(-55deg);
   filter: blur(30px) drop-shadow(20px 20px 20px #7400b8);
@@ -283,4 +284,22 @@ header p {
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* paginatier*/
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.pagination a {
+  padding: 5px;
+}
+
+.pagination .selected {
+  border-radius: 6px;
+  background: #535bf2;
 }

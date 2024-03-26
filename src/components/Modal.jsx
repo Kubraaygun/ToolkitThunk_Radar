@@ -3,12 +3,13 @@ import { useEffect, useState } from "react";
 import { options2 } from "../constant";
 import { useDispatch } from "react-redux";
 import { setTrail } from "../redux/slices/flightSlice";
+import moment from "moment/moment";
+import "moment/locale/tr";
 
 const Modal = ({ detailId, closeModal }) => {
   const [d, setData] = useState(null);
-  const dispatch =useDispatch()
+  const dispatch = useDispatch();
 
-  
   useEffect(() => {
     //Her calistiginda onceki ucusun verilerini temizliyoruz.
     //Bu sayede yukleniyor tetiklenecek
@@ -19,11 +20,15 @@ const Modal = ({ detailId, closeModal }) => {
         options2
       )
       .then((res) => {
-        dispatch(setTrail(res.data.trail))
+        dispatch(setTrail(res.data.trail));
         setData(res.data);
       });
   }, [detailId]);
 
+  const formatDate = (unix_time) => {
+    const date = new Date(unix_time * 1000).toUTCString();
+    return moment(date).calendar();
+  };
   return (
     <div className="detail-outer">
       <div className="detail-inner">
@@ -36,6 +41,11 @@ const Modal = ({ detailId, closeModal }) => {
             <div class="loader">
               <span></span>
             </div>
+          </div>
+        ) : !d.airport.origin || !d.airport.destination ? (
+          <div>
+            <p>{d.airline?.name}</p>
+            <p>Bu Uçuşun Verileri Gizlidir</p>
           </div>
         ) : (
           <>
@@ -59,6 +69,16 @@ const Modal = ({ detailId, closeModal }) => {
               <a target="_blank" href={d.airport.destination.name}>
                 {d.airport.destination.name}
               </a>
+            </p>
+
+            <p>
+              <span> Kalkış Saati: </span>
+              <span> {formatDate(d.time.scheduled.departure)} </span>
+            </p>
+
+            <p>
+              <span> İniş Saati: </span>
+              <span> {formatDate(d.time.scheduled.arrival)} </span>
             </p>
 
             <p className={d.status.icon}>
