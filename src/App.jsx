@@ -4,7 +4,7 @@ import ListView from "./pages/ListView";
 import MapView from "./pages/MapView";
 import { useDispatch } from "react-redux";
 import { getFlights } from "./redux/actions/flightAction";
-import  Modal  from "./components/Modal";
+import Modal from "./components/Modal";
 
 function App() {
   const [isMapView, setIsMapView] = useState(true);
@@ -24,7 +24,9 @@ function App() {
   };
 
   useEffect(() => {
-    dispatch(getFlights());
+    setInterval(() => {
+      dispatch(getFlights());
+    }, 5000);
   }, []);
 
   return (
@@ -47,7 +49,11 @@ function App() {
         </button>
       </div>
 
-      {isMapView ? <MapView openModal={openModal} /> : <ListView />}
+      {isMapView ? (
+        <MapView openModal={openModal} />
+      ) : (
+        <ListView openModal={openModal} />
+      )}
 
       {/** modal bileseni */}
       {isOpen && <Modal detailId={detailId} closeModal={closeModal} />}
