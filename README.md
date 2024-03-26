@@ -18,7 +18,6 @@ Bu proje, kullanıcıların uçuşları izleyebilmesini ve detaylı bilgiler ala
 <li>Uçuşları belirli bir aralıkta sınırlayabilme ve sayfalama özelliği.</li>
 </ul>
 
-
 <h2> Kullanılan Teknolojiler </h2>
 <ul>
 <li>React.js</li>
@@ -30,7 +29,6 @@ Bu proje, kullanıcıların uçuşları izleyebilmesini ve detaylı bilgiler ala
 
 </ul>
 
-
 <h2>Ekran Görüntüsü</h2>
 
-![](./public/netflix-gif.gif)
+![](./public/toolkitradar.gif)
