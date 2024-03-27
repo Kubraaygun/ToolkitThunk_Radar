@@ -9,7 +9,7 @@ Bu proje, kullanıcıların uçuşları izleyebilmesini ve detaylı bilgiler ala
 <li>Kullanıcıların uçuşlar hakkında detaylı bilgiler alabilmesi.</li>
 </ul>
 
-<h2> Özellikler </h2>
+<h2> Özelliklerasdaa </h2>
 
 <ul>
 <li>Harita görünümü ve liste görünümü arasında geçiş yapabilme.</li>
