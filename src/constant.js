@@ -1,3 +1,6 @@
+
+
+
 export const options = {
   method: "GET",
   url: "https://flight-radar1.p.rapidapi.com/flights/list-in-boundary",
@@ -9,7 +12,7 @@ export const options = {
     limit: "300",
   },
   headers: {
-    "X-RapidAPI-Key": "0ae73afa42msh492c768e6f710ddp1f96e6jsnc03826257744",
+    "X-RapidAPI-Key":  import.meta.env.VITE_RAPIDAPI_KEY,
     "X-RapidAPI-Host": "flight-radar1.p.rapidapi.com",
   },
 };
@@ -17,6 +20,6 @@ export const options = {
 
 export const options2= {
   headers: {
-    "X-RapidAPI-Key": "0ae73afa42msh492c768e6f710ddp1f96e6jsnc03826257744",
+    "X-RapidAPI-Key": import.meta.env.VITE_RAPIDAPI_KEY,
     "X-RapidAPI-Host": "flight-radar1.p.rapidapi.com",
-}}
+}}   
